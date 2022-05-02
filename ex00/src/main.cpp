@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "ClapTrap.hpp"
 
 int main()
@@ -7,5 +9,8 @@ int main()
 	a.attack("TrapClap");
 	a.takeDamage(5);
 	a.beRepaired(5);
+
+	std::cout << std::endl;
+
 	return 0;
 }

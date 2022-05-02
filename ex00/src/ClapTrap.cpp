@@ -1,14 +1,35 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() : _name("No Name"), _hp(10), _ep(10), _ad(0)
+{
+	std::cout << "ClapTrap created with default." << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
 	std::cout << "ClapTrap " << name << " created." << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& other) : _name(other._name), _hp(other._hp), _ep(other._ep), _ad(other._ad)
+{
+	std::cout << "ClapTrap " << other._name << " copied." << std::endl;
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap " << this->_name << " destroyed." << std::endl;
+}
+
+ClapTrap&
+ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "ClapTrap " << this->_name << " assigned." << std::endl;
+	this->_name = other._name;
+	this->_hp = other._hp;
+	this->_ep = other._ep;
+	this->_ad = other._ad;
+	return *this;
 }
 
 void

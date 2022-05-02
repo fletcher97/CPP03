@@ -19,5 +19,8 @@ main()
 	b.takeDamage(5);
 	b.beRepaired(5);
 	b.guardGate();
+
+	std::cout << std::endl;
+
 	return 0;
 }

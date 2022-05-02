@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap" << this->_name << " destroyed." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " destroyed." << std::endl;
 }
 
 void

@@ -15,7 +15,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 	std::cout << "DiamondTrap " << this->_name << " started." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other._name + "_clap_name"), ScavTrap(other), FragTrap(other), _name(other._name)
+DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other), ScavTrap(other), FragTrap(other), _name(other._name)
 {
 	std::cout << "DiamondTrap " << other._name << " copied." << std::endl;
 }
@@ -23,6 +23,18 @@ DiamondTrap::DiamondTrap(const DiamondTrap& other) : ClapTrap(other._name + "_cl
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap " << this->_name << " stopped." << std::endl;
+}
+
+DiamondTrap&
+DiamondTrap::operator=(const DiamondTrap& other)
+{
+	std::cout << "DiamondTrap " << this->_name << " assigned." << std::endl;
+	this->_name = other._name;
+	this->ClapTrap::_name = other.ClapTrap::_name;
+	this->_hp = other._hp;
+	this->_ep = other._ep;
+	this->_ad = other._ad;
+	return *this;
 }
 
 void
